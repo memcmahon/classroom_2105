@@ -49,22 +49,22 @@ describe Classroom do
 
   # iteration 3
   context 'Over Capcity' do
-    it 'starts under capacity' do
+    it 'tests classroom capacity' do
       classroom = Classroom.new('History', 4)
       expect(classroom.over_capacity?).to eq false
 
       classroom.add_student('Mike')
       classroom.add_student('Megan')
       classroom.add_student('Bob')
+      classroom.add_student('Ian')
       expect(classroom.over_capacity?).to eq false
 
-      classroom.add_student('Ian')
       classroom.add_student('Riker')
-      classroom.add_student('Nile')
-      classroom.add_student('Athena')
-
       expect(classroom.over_capacity?).to eq true
 
+      classroom.add_student('Nile')
+      classroom.add_student('Athena')
+      expect(classroom.over_capacity?).to eq true
     end
   end
 end
