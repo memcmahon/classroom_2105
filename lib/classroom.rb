@@ -22,4 +22,20 @@ class Classroom
     # end
     # upcased_names
   end
+
+  def over_capacity?
+    # option 1, perfectly acceptable
+    # if @students.length > @capacity
+    #   true
+    # else
+    #   false
+    # end
+
+    # option 2, also a good option
+    # return true if @students.length > @capacity
+    # false
+
+    # option 3, nice and short
+    @students.length > @capacity
+  end
 end
